@@ -6,6 +6,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.46.0-rc.2](https://github.com/0xPlaygrounds/rig/compare/rig-core-v0.46.0-rc.1...rig-core-v0.46.0-rc.2) - 2026-10-29
+
+### Added
+
+- *(rig-traffic)* record every provider HTTP exchange, on rig-cassette's engine ([#2893](https://github.com/0xPlaygrounds/rig/pull/2893)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(providers)* [**breaking**] Ollama's Messages route, OpenCode Zen and Go, DeepSeek strict tools ([#2889](https://github.com/0xPlaygrounds/rig/pull/2889)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(openai)* Responses for MiniMax, Moonshot, Groq and Doubleword, cache breakpoints, caller-built input ([#2888](https://github.com/0xPlaygrounds/rig/pull/2888)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(telemetry)* record tool definitions on agent completion spans ([#2885](https://github.com/0xPlaygrounds/rig/pull/2885)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Fixed
+
+- *(core)* [**breaking**] stop forcing serde_json features ([#2934](https://github.com/0xPlaygrounds/rig/pull/2934)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] headless runs close what an exit cuts off, refuse unknown --tools, fail empty answers ([#2915](https://github.com/0xPlaygrounds/rig/pull/2915)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(chatgpt, tui)* ask ChatGPT for a reasoning summary, draw reasoning as markdown ([#2912](https://github.com/0xPlaygrounds/rig/pull/2912)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] Esc keeps the partial reply, /compact keeps history, accurate summaries, ctx ? after compaction ([#2918](https://github.com/0xPlaygrounds/rig/pull/2918)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] a failed message goes back into the input ([#2895](https://github.com/0xPlaygrounds/rig/pull/2895)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* a 64k output budget, unknown-tool feedback, honest failed summaries, ordered headless JSON ([#2894](https://github.com/0xPlaygrounds/rig/pull/2894)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Other
+
+- provider knowledge out of generic code, typed lookups ([#2897](https://github.com/0xPlaygrounds/rig/pull/2897)) (by [gold-silver-copper](https://github.com/gold-silver-copper)) - #2897
+- *(core)* each wire owns where its reasoning blob lives ([#2896](https://github.com/0xPlaygrounds/rig/pull/2896)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Contributors
+
+* [gold-silver-copper](https://github.com/gold-silver-copper)
 ## [0.45.0](https://github.com/0xPlaygrounds/rig/compare/rig-core-v0.44.0...rig-core-v0.45.0) - 2026-10-19
 
 ### Added

@@ -8,6 +8,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Sections are generated on the release PR from the merged pull requests; do not
 edit this file in an ordinary PR (CI fails). Put notes under `## Changelog` in
 your PR description.
+## [0.46.0-rc.2](https://github.com/0xPlaygrounds/rig/compare/v0.46.0-rc.1...v0.46.0-rc.2) - 2026-10-29
+
+### Added
+
+- *(rig-traffic)* record every provider HTTP exchange, on rig-cassette's engine ([#2893](https://github.com/0xPlaygrounds/rig/pull/2893)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(providers)* [**breaking**] Ollama's Messages route, OpenCode Zen and Go, DeepSeek strict tools ([#2889](https://github.com/0xPlaygrounds/rig/pull/2889)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(openai)* Responses for MiniMax, Moonshot, Groq and Doubleword, cache breakpoints, caller-built input ([#2888](https://github.com/0xPlaygrounds/rig/pull/2888)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(rig-claude-cloak)* publish claude-cloak with every release ([#2891](https://github.com/0xPlaygrounds/rig/pull/2891)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(sqlite, postgres)* database-backed rig-memory session stores ([#2890](https://github.com/0xPlaygrounds/rig/pull/2890)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(telemetry)* record tool definitions on agent completion spans ([#2885](https://github.com/0xPlaygrounds/rig/pull/2885)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* provider-hosted tools on AgentBuilder, run budget example, HookTestHarness ([#2886](https://github.com/0xPlaygrounds/rig/pull/2886)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Fixed
+
+- *(agent)* [**breaking**] headless runs hear SIGTERM in any setup, stop when nobody reads, and leave no tool processes behind ([#2942](https://github.com/0xPlaygrounds/rig/pull/2942)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(tui)* a diff in tool output ends its hunk at the first line that cannot be in it ([#2941](https://github.com/0xPlaygrounds/rig/pull/2941)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(rig-tools)* [**breaking**] a tool path starting with ~ is in the home directory ([#2940](https://github.com/0xPlaygrounds/rig/pull/2940)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(rig-basics)* the system prompt lets the user's request set the answer ([#2939](https://github.com/0xPlaygrounds/rig/pull/2939)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(core)* [**breaking**] stop forcing serde_json features ([#2934](https://github.com/0xPlaygrounds/rig/pull/2934)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(tui)* [**breaking**] fix picker layout, status text, edit diffs and paging ([#2917](https://github.com/0xPlaygrounds/rig/pull/2917)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] headless runs close what an exit cuts off, refuse unknown --tools, fail empty answers ([#2915](https://github.com/0xPlaygrounds/rig/pull/2915)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(corpus, tui)* [**breaking**] editor commands run through the shell, and their failures show ([#2914](https://github.com/0xPlaygrounds/rig/pull/2914)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(chatgpt, tui)* ask ChatGPT for a reasoning summary, draw reasoning as markdown ([#2912](https://github.com/0xPlaygrounds/rig/pull/2912)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] Esc keeps the partial reply, /compact keeps history, accurate summaries, ctx ? after compaction ([#2918](https://github.com/0xPlaygrounds/rig/pull/2918)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(tools)* [**breaking**] read returns images, long lines can be read on, a clearer timeout hint ([#2913](https://github.com/0xPlaygrounds/rig/pull/2913)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(tui)* [**breaking**] prompt history per project, the shown conversation's prompts first ([#2916](https://github.com/0xPlaygrounds/rig/pull/2916)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(tui, harness)* one Ctrl+D quits; a session with no messages isn't saved ([#2909](https://github.com/0xPlaygrounds/rig/pull/2909)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] no self-extension prompt, a resume hint on exit, a session migration chain ([#2899](https://github.com/0xPlaygrounds/rig/pull/2899)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* [**breaking**] a failed message goes back into the input ([#2895](https://github.com/0xPlaygrounds/rig/pull/2895)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(agent)* a 64k output budget, unknown-tool feedback, honest failed summaries, ordered headless JSON ([#2894](https://github.com/0xPlaygrounds/rig/pull/2894)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(rig-http)* dispatch an SSE event a final CR ends; tag rig-mongodb's handshake ([#2887](https://github.com/0xPlaygrounds/rig/pull/2887)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Other
+
+- *(agent)* [**breaking**] extension points as ECS data and systems ([#2900](https://github.com/0xPlaygrounds/rig/pull/2900)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- *(corpus, tools, xtask)* shared policies, typed lookups ([#2898](https://github.com/0xPlaygrounds/rig/pull/2898)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+- provider knowledge out of generic code, typed lookups ([#2897](https://github.com/0xPlaygrounds/rig/pull/2897)) (by [gold-silver-copper](https://github.com/gold-silver-copper)) - #2897
+- *(core)* each wire owns where its reasoning blob lives ([#2896](https://github.com/0xPlaygrounds/rig/pull/2896)) (by [gold-silver-copper](https://github.com/gold-silver-copper))
+
+### Contributors
+
+* [gold-silver-copper](https://github.com/gold-silver-copper)
 
 ## [0.45.0](https://github.com/0xPlaygrounds/rig/compare/v0.44.0...v0.45.0) - 2026-10-19
 
